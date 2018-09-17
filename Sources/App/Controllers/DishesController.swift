@@ -10,7 +10,7 @@ class DishesController: RouteCollection {
     dishesRoutes.get(Dish.parameter, use: findById)
     dishesRoutes.post(Dish.self, at: "/", use: create)
     dishesRoutes.get("courses", String.parameter, use: findByCourse)
-    //dishesRoutes.delete(Dish.self, use: remove)
+    dishesRoutes.delete(Dish.parameter, use: remove)
   }
 
   func index(req: Request) -> Future<[Dish]> {
@@ -30,7 +30,7 @@ class DishesController: RouteCollection {
     return dish.save(on: req)
   }
 
-  /*func remove(req: Request) throws -> Future<Dish> {
-    try req.parameters.next(Dish.self).delete(on: req)
-  }*/
+  func remove(req: Request) throws -> Future<Dish> {
+    return try req.parameters.next(Dish.self).delete(on: req)
+  }
 }

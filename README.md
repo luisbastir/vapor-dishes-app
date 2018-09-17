@@ -2,7 +2,7 @@
 
 This is a demo app using Vapor 3 server framework. This project is based on a course taught by Mohammad Azam for learning and practicing purposes.
 
-TODO: Add a project description
+A basic CRUD model example with Dishes as a model and served on a http port using Vapor.
 
 ## Getting Started
 
