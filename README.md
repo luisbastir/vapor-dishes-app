@@ -24,6 +24,7 @@ Then clone this repository by running the following command
 First you need to build the app by running the follow command
 
 ```bash
+> swift package update
 > vapor build
 ```
 

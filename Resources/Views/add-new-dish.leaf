@@ -1,0 +1,13 @@
+#set("content") {
+  <h1>Add New Dish</h1>
+  <form action="/add-new-dish" method="POST">
+    <input type="text" name="title" placeholder="title">
+    <input type="number" name="price" placeholder="price">
+    <input type="text" name="course" placeholder="course">
+    <input type="text" name="imageURL" placeholder="imageURL">
+    <input type="text" name="description" placeholder="description">
+    <input type="submit">
+  </form>
+}
+
+#embed("base")

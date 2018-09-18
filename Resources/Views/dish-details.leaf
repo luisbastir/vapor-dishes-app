@@ -1,0 +1,44 @@
+#set("content") {
+  #if(dish) {
+    <h1>Edit Dish</h1>
+    <form action="/update-dish" method="POST">
+      <input type="hidden" name="id" value="#(dish.id)">
+      <input type="text" name="title" value="#(dish.title)" placeholder="title">
+      <input type="number" name="price" value="#(dish.price)" placeholder="price">
+      <input type="text" name="course" value="#(dish.course)" placeholder="course">
+      <input type="text" name="imageURL" value="#(dish.imageURL)" placeholder="imageURL">
+      <input type="text" name="description" value="#(dish.description)" placeholder="description">
+      <input type="submit" value="Update">
+    </form>
+
+    <h2>Add a Review</h2>
+
+    <form action="/add-review" method="POST">
+      <input type="hidden" name="dishId" value="#(dish.id)">
+      <input type="text" name="title" placeholder="title">
+      <input type="text" name="body" placeholder="body">
+      <input type="submit" value="Save Review">
+    </form>
+
+    <h2>Dish's Reviews</h2>
+
+    #if(reviews.length > 0) {
+      <ul>
+      #for(review in reviews) {
+        <li>
+          <label><strong>#(review.title)</strong></label><br>
+          <label>#(review.body)</label>
+        </li>
+        <br>
+      }
+      </ul>
+    } else {
+      <p>There are no reviews</p>
+    }
+
+  } else {
+    <p>Dish not found</p>
+  }
+}
+
+#embed("base")

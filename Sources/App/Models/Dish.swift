@@ -18,6 +18,12 @@ final class Dish: Content {
   }
 }
 
+extension Dish {
+  var reviews: Children<Dish, Review> {
+    return children(\.dishId)
+  }
+}
+
 extension Dish: SQLiteModel {
   static let entity: String = "dishes"
 }

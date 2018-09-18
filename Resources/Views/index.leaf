@@ -1,0 +1,25 @@
+#set("content") {
+  <div>
+    #if(dishes) {
+      <ul>
+        #for(dish in dishes) {
+          <li>
+            <div class="dish-item">
+              <img src="#(dish.imageURL)" />
+              <label><a href="/dishes/#(dish.id)">#(dish.title)</a></label>
+              <label>$#(dish.price)</label>
+              <form action="/delete-dish" method="POST">
+                <input type="hidden" name="dishId" value="#(dish.id)">
+                <input type="submit" value="Delete">
+              </form>
+            </div>
+          </li>
+        }
+      </ul>
+    } else {
+      <p>There are no dishes</p>
+    }
+  </div>
+}
+
+#embed("base")

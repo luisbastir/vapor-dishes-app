@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+.menu li {
+  width: 100px;
+  padding: 2px;
+  margin: 2px;
+  color: white;
+  text-align: center;
+  background-color: gray;
+}
+
+.dish-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}

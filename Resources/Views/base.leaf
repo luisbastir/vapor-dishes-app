@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>
+      Dishes Manager
+    </title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <h1>Dishes Manager</h1>
+    <div class="container">
+      <div>
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/add-new-dish">New Dish</a></li>
+        </ul>
+      </div>
+
+      #get(content)
+    </div>
+  </body>
+</html>
