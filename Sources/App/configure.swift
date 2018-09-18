@@ -28,6 +28,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
   /// Configure migrations
   var migrations = MigrationConfig()
   migrations.add(model: Dish.self, database: .sqlite)
+  // migrations.add(migration: MigrationExample.self, database: .sqlite)
   services.register(migrations)
 
   // Configure port

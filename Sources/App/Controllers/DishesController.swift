@@ -9,6 +9,7 @@ class DishesController: RouteCollection {
     dishesRoutes.get("/", use: index)
     dishesRoutes.get(Dish.parameter, use: findById)
     dishesRoutes.post(Dish.self, at: "/", use: create)
+    dishesRoutes.put(Dish.self, at: "/", use: update)
     dishesRoutes.get("courses", String.parameter, use: findByCourse)
     dishesRoutes.delete(Dish.parameter, use: remove)
   }
@@ -28,6 +29,10 @@ class DishesController: RouteCollection {
 
   func create(req: Request, dish: Dish) throws -> Future<Dish> {
     return dish.save(on: req)
+  }
+
+  func update(req: Request, dish: Dish) -> Future<Dish> {
+    return dish.update(on: req)
   }
 
   func remove(req: Request) throws -> Future<Dish> {
